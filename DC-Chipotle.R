@@ -100,6 +100,9 @@ sd_pop_map
 
 
 
+
+
+
 # Load south_dakota_pop.rds into an object called south_dakota_pop
 south_dakota_pop <- readRDS("south_dakota_pop.rds")
 
@@ -119,6 +122,20 @@ sd_pop_map <-
 sd_pop_map
 
 
+# Load chipotle_sd_locations.csv that contains proposed South Dakota locations  
+chipotle_sd_locations <- read_csv("chipotle_sd_locations.csv")
+
+# limit chipotle store data to locations in states boardering South Dakota
+chipotle_market_research <- 
+  chipotle_open %>% 
+  filter(st %in% c("IA", "MN", "MT", "ND", "NE", "WY")) %>% 
+  select(city, st, lat, lon) %>% 
+  mutate(status = "open") %>% 
+  # bind the data on proposed SD locations onto the open store data
+  bind_rows(chipotle_sd_locations) 
+
+# print the market research data
+chipotle_market_research
 
 
 # Create a blue and red color palette to distinguish between open and proposed stores
