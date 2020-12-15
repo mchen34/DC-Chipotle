@@ -5,7 +5,7 @@ library(leaflet.extras)
 library(sf)
 
 # Read datasets/chipotle.csv into a tibble named chipotle using read_csv
-chipotle <- read_csv("datasets/chipotle.csv")
+chipotle <- read_csv("chipotle.csv")
 
 # Print out the chipotle tibble using the head function
 head(chipotle)
@@ -81,7 +81,7 @@ states_wo_chipotles
 
 
 # Load south_dakota_pop.rds into an object called south_dakota_pop
-south_dakota_pop <- readRDS("datasets/south_dakota_pop.rds")
+south_dakota_pop <- readRDS("south_dakota_pop.rds")
 
 # Create color palette to color map by county population estimate
 pal <- colorNumeric(palette = "viridis", domain = south_dakota_pop$estimate)
@@ -101,7 +101,7 @@ sd_pop_map
 
 
 # Load south_dakota_pop.rds into an object called south_dakota_pop
-south_dakota_pop <- readRDS("datasets/south_dakota_pop.rds")
+south_dakota_pop <- readRDS("south_dakota_pop.rds")
 
 # Create color palette to color map by county population estimate
 pal <- colorNumeric(palette = "viridis", domain = south_dakota_pop$estimate)
@@ -140,7 +140,7 @@ sd_proposed_map
 
 
 # load the Voronoi polygon data 
-polys <- readRDS("datasets/voronoi_polygons.rds")
+polys <- readRDS("voronoi_polygons.rds")
 
 voronoi_map <- 
   polys %>%
