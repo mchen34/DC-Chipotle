@@ -4,7 +4,6 @@ library(leaflet)
 library(leaflet.extras)
 library(sf)
 
-# Read datasets/chipotle.csv into a tibble named chipotle using read_csv
 chipotle <- read_csv("chipotle.csv")
 
 # Print out the chipotle tibble using the head function
